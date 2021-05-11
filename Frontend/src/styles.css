@@ -1,0 +1,40 @@
+html {
+	height: 100%;
+}
+
+body{
+	background-color: #e2e3e5;
+}
+
+body,
+app-root,
+app-login,
+app-lst-documentos,
+app-alta-archivo {
+	display: -ms-flexbox !important;
+	display: flex !important;
+
+	-ms-flex-direction: column !important;
+	flex-direction: column !important;
+
+	margin: 0 !important;
+
+	height: 100% !important
+}
+
+app-login,
+app-lst-documentos {
+	background-color: #e2e3e5;
+}
+
+/* 
+@media (min-width: 992px) {
+	main {
+		max-width: 1200px;
+	}
+
+	.mx-0 {
+		margin: auto !important;
+	}
+} 
+*/

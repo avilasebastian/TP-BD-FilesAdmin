@@ -1,0 +1,9 @@
+main {
+    width: 75%;
+}
+
+@media (min-width:576px) {
+	main {
+        width: auto;
+	}
+}

@@ -1,0 +1,39 @@
+<div class="archivo-page">
+    <form #frmbusqueda="ngForm" class="form-archivo">
+        <div class="form-row">
+            <input matInput type="text" name="titulo" [(ngModel)]="archivo.titulo" readonly class="archivotitulo">
+        </div>
+        <div class="form-row">
+            <div class="col-md-6">
+                <label class="lblpropiedad">Extension: </label>
+                <input matInput type="text" name="extension" [(ngModel)]="archivo.extensionArchivo" readonly
+                    class="txtPropiedad">
+            </div>
+            <div class="col-md-6">
+                <label class="lblpropiedad">Fecha de Publicacion: </label>
+                <input matInput type="text" name="fecha_publicacion" [(ngModel)]="archivo.fecha_publicacion" readonly
+                    class="txtPropiedad">
+            </div>
+            <div class="col-md-6">
+                <label class="lblpropiedad">Cantidad de descargas: </label>
+                <input matInput type="text" name="cantidadDescargas" [(ngModel)]="archivo.cantidadDescargas" readonly
+                    class="txtPropiedad">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <label class="lbltblpropiedad">Categorias: </label>
+            <table class="tblcategorias">
+                <tr *ngFor='let item of archivo.categoria'>
+                    <td>{{item.descripcion}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="form-row botones">
+            <button mat-raised-button class="btn-success" (click)="volver()">
+                Volver
+            </button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,90 @@
+.title-add,
+.selects {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.form-busqueda {
+	min-width: 150px;
+	max-width: 80%;
+	width: 100%;
+	margin: 20px;
+	margin: auto;
+}
+
+.form-busqueda-width {
+	width: 100%;
+}
+
+.registro-button {
+	/* color:white;
+  background-color:#28a745; */
+	display: block;
+	margin-left: 10px !important;
+}
+
+.categoria,
+.extension {
+	display: flex;
+	flex-direction: column;
+}
+
+.mat-form-field-infix {
+	border: 0px !important;
+}
+
+.mat-form-field-flex {
+	padding: 0px;
+}
+
+table {
+	width: 100%;
+}
+
+.octcen {
+	width: 80%;
+	margin: auto;
+}
+
+.mat-form-field {
+	font-size: 14px;
+	width: 100%;
+}
+
+/* 
+td,
+th {
+	width: 25%;
+} */
+
+.izquierda {
+	float: left;
+	width: 50%;
+	padding-right: 5px;
+}
+
+.derecha {
+	float: left;
+	width: 50%;
+	padding-left: 5px;
+}
+
+.btn-limpiar {
+	float: right;
+	margin: 0px;
+	background-color: #ffc107;
+	border-color: #d3a20e;
+	color: #000;
+	max-width: 200px;
+}
+
+.btn-limpiar:hover {
+	color: #000;
+	background-color: #f5ba08;
+	border-color: #b3890d;
+}
+
+.tdtitulo{
+	white-space: nowrap;
+}

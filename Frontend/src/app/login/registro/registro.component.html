@@ -1,0 +1,50 @@
+<form #frmRegistro="ngForm" class="d-flex flex-column mx-2" (ngSubmit)="registrarUsuario(frmRegistro)">
+
+	<mat-form-field>
+		<input type="text" required name="nombre" placeholder="Nombre" matInput ngModel #nombre="ngModel">
+		<mat-error *ngIf="nombre.invalid">Escriba un nombre de usuario</mat-error>
+		<mat-icon matSuffix>perm_identity</mat-icon>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input type="text" required name="apellido" placeholder="Apellido" matInput ngModel #apellido="ngModel">
+		<mat-error *ngIf="apellido.invalid">Escriba un apellido de usuario</mat-error>
+		<mat-icon matSuffix>perm_identity</mat-icon>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input type="date" required name="fechaDeNacimiento" placeholder="Fecha de Nacimiento" matInput ngModel #fechaDeNacimiento="ngModel">
+		<mat-error *ngIf="fechaDeNacimiento.invalid">Escriba una fecha</mat-error>
+		<mat-icon matSuffix>calendar_today</mat-icon>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input matInput placeholder="Nombre de Usuario" required name="nombreDeUsuario" ngModel #nombreDeUsuario="ngModel">
+		<mat-error *ngIf="nombreDeUsuario.invalid">Escriba un nombre de usuario</mat-error>
+		<mat-icon matSuffix>alternate_email</mat-icon>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input type="password" required minlength="6" name="password" placeholder="Contraseña" matInput ngModel #password="ngModel">
+		<mat-error *ngIf="password.errors && password.errors.required">Escriba una contraseña</mat-error>
+		<mat-error *ngIf="password.errors && password.errors.minlength">La contraseña debería ser de al menos 6 caracteres</mat-error>
+		<mat-icon matSuffix>lock</mat-icon>
+	</mat-form-field>
+
+	<mat-form-field>
+		<input type="password" required minlength="6" name="repassword" placeholder="Confirmación de contraseña" matInput ngModel #repassword="ngModel">
+		<mat-error *ngIf="repassword.errors && repassword.errors.required">Escriba otra vez la contraseña</mat-error>
+		<mat-icon matSuffix>lock</mat-icon>
+	</mat-form-field>
+
+	<button type="submit" class="btn btn-success my-2">Registrarse</button>
+
+	<div *ngIf="contrasenia" class="alert alert-danger text-center my-2" role="alert">
+		La contraseñas no coinciden
+	</div>
+
+	<div *ngIf="usuarioRepe" class="alert alert-danger text-center my-2" role="alert">
+		El usuario ya existe
+	</div>
+
+</form>

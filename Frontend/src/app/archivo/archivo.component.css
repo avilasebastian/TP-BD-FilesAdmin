@@ -1,0 +1,101 @@
+*:focus {
+    outline: none;
+}
+
+.archivo-page {
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: #303F9F; */
+    background-color:#e2e3e5;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.title-add, .selects {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-archivo {
+    min-width: 150px;
+    max-width: 80%;
+    width: 100%;
+    margin: 20px auto;
+}
+
+.registro-button{
+  /* color:white;
+  background-color:#28a745; */
+  display: block;
+  margin-left: 10px !important;
+}
+
+.archivotitulo{
+    background: transparent;
+    border: 0px;
+    color: #004983;
+    font-size: 2em;
+    font-weight: 400;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.col-md-6{
+    float: left;
+    width: 30%;
+}
+.form-row{
+    display: flow-root;
+    margin-bottom: 10px;
+}
+
+.lblpropiedad{
+    font-weight: 500;
+    color: #004983;
+    font-size: 1.2em;
+}
+
+.txtPropiedad{
+    background: transparent;
+    border: 0px;
+    font-size: 1.2em;
+    max-width: 30%;
+}
+
+.lbltblpropiedad{
+    font-weight: 500;
+    color: #004983;
+    font-size: 1.2em;
+    float: left;
+}
+
+.tblcategorias{
+    max-width: 50%;
+    font-size: 1.2em;
+    float: left;
+}
+.botones{
+    text-align: center;
+}
+
+.btn-success {
+	color: #fff;
+	background-color: hsl(134, 61%, 41%);
+	border-color: #28a745;
+  max-width: 200px;
+}
+
+.btn-success:hover {
+	color: #fff;
+	background-color: #218838;
+	border-color: #1e7e34
+}

@@ -1,0 +1,66 @@
+<app-nav-bar></app-nav-bar>
+
+<main class="media-body d-flex flex-column mx-auto">
+	<!-- enctype="multipart/form-data" -->
+	<form #documento="ngForm" class="media-body d-flex flex-column mt-3" enctype="multipart/form-data"
+		(ngSubmit)=guardar()>
+
+		<div class="form-row">
+			<div class="col-12 col-md-6 form-group">
+				<label>Fecha de alta</label>
+				<input class="form-control" type="date" disabled [(ngModel)]="archivo.fecha_publicacion"
+					name="fecha_publicacion">
+			</div>
+			<div class="col-12 col-md-6 form-group">
+				<label>Propietario</label>
+				<input class="form-control" type="text" disabled [(ngModel)]="archivo.propietario.nombreDeUsuario"
+					name="propietario">
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label>Nombre del archivo</label>
+			<input class="form-control" type="text" disabled [(ngModel)]="archivo.titulo" name="titulo">
+		</div>
+
+		<div class="form-row">
+			<div class="col-12 col-sm-7">
+				<div class="form-group">
+					<label>Extension</label>
+					<input class="form-control" type="text" disabled [(ngModel)]="archivo.extensionArchivo"
+						name="extensionArchivo">
+				</div>
+				<div class="form-group" *ngIf="miBaul.esModificable">
+					<label class="label">Archivo</label>
+					<div class="form-control-file custom-file">
+						<input required (change)="onFileSelect($event)" type="file" class="custom-file-input"
+							id="inputGroupFile01" aria-describedby="inputGroupFileAddon01" name="url">
+						<label class="custom-file-label" for="inputGroupFile01">{{customFileLabel()}}</label>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-12 col-sm-5 pl-5 my-1">
+				<p>Categorias</p>
+				<div *ngFor="let categoria of todasLasCategorias">
+					<input required name="categoria" [checked]="isChecked(categoria)" [disabled]="!miBaul.esModificable"
+						(change)="$event.target.checked ? sumar(categoria) : restar(categoria)"
+						class="form-check-input mr-2" type="checkbox" value="SI">
+					{{categoria.descripcion}} <br>
+				</div>
+			</div>
+		</div>
+
+		<div class="mt-auto pb-4 d-flex flex-row justify-content-between" *ngIf="!miBaul.esModificable">
+			<button class="btn btn-info" (click)="descargar(nroarchivo)">Descargar</button><br /><br />
+			<button class="btn btn-info" (click)="cancelar()">Volver</button>
+		</div>
+
+		<div class="mt-auto pb-4 d-flex flex-row justify-content-between" *ngIf="miBaul.esModificable">
+			<button type="submit" class="btn btn-info">Aceptar</button>
+			<button class="btn btn-info" (click)="cancelar()">Cancelar</button>
+		</div>
+	</form>
+</main>
+
+<app-footer></app-footer>
